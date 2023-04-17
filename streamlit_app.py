@@ -1,16 +1,14 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, intmap, upload  # import your app modules here
+from apps import home, heatmap, intmap, splitmap, upload  # import your app modules here
 
 st.set_page_config(page_title="Streamlit Geospatial", layout="wide")
-
-# https://icons.getbootstrap.com
 
 apps = [
     {"func": home.app, "title": "Home", "icon": "house"},
     {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
-    {"func": home.app, "title": "Interactive Map", "icon": "house"},
-    {"func": home.app, "title": "Split Map", "icon": "house"},
+    {"func": intmap.app, "title": "Interactive Map", "icon": "globe"},
+    {"func": splitmap.app, "title": "Split Map", "icon": "window-split"},
     {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
 ]
 
