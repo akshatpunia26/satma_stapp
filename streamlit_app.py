@@ -1,14 +1,18 @@
 import streamlit as st
+st.set_page_config(page_title="Indian Geospatial Analysis",layout="wide")
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, intmap, splitmap, upload  # import your app modules here
+from apps import home, heatmap, intmap, splitmap, basemaps, marketcluster, upload  # import your app modules here
 
-st.set_page_config(page_title="Streamlit Geospatial", layout="wide")
+
+# https://icons.getbootstrap.com
 
 apps = [
     {"func": home.app, "title": "Home", "icon": "house"},
     {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
     {"func": intmap.app, "title": "Interactive Map", "icon": "globe"},
     {"func": splitmap.app, "title": "Split Map", "icon": "window-split"},
+    {"func": marketcluster.app, "title": "Market Cluster", "icon": "pin-map"},
+    {"func": basemaps.app, "title": "Base Maps", "icon": "atlas"},
     {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
 ]
 

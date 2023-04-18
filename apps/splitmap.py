@@ -1,18 +1,6 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 
-st.set_page_config(layout="wide")
-
-markdown = """
-Web App URL: <https://template.streamlit.app>
-GitHub Repository: <https://github.com/giswqs/streamlit-multipage-template>
-"""
-
-st.sidebar.title("About")
-st.sidebar.info(markdown)
-logo = "https://i.imgur.com/UbOXYAU.png"
-st.sidebar.image(logo)
-
 def app():
     st.title("Split-panel Map")
 
