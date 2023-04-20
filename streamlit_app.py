@@ -1,18 +1,19 @@
 import streamlit as st
 st.set_page_config(page_title="Indian Geospatial Analysis",layout="wide")
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, intmap, splitmap, basemaps, marketcluster, upload  # import your app modules here
+from apps import home, heatmap, intmap, splitmap, basemaps, marketcluster, webmap, upload  # import your app modules here
 
 
 # https://icons.getbootstrap.com
 
 apps = [
     {"func": home.app, "title": "Home", "icon": "house"},
-    {"func": heatmap.app, "title": "Heatmap", "icon": "map"},
+    {"func": heatmap.app, "title": "Heatmap", "icon": "fire"},
     {"func": intmap.app, "title": "Interactive Map", "icon": "globe"},
     {"func": splitmap.app, "title": "Split Map", "icon": "window-split"},
     {"func": marketcluster.app, "title": "Market Cluster", "icon": "pin-map"},
-    {"func": basemaps.app, "title": "Base Maps", "icon": "atlas"},
+    {"func": basemaps.app, "title": "Base Maps", "icon": "house"},
+    {"func": webmap.app, "title": "WebMap Base Layers", "icon": "map"},
     {"func": upload.app, "title": "Upload", "icon": "cloud-upload"},
 ]
 
@@ -32,13 +33,13 @@ with st.sidebar:
         "Main Menu",
         options=titles,
         icons=icons,
-        menu_icon="cast",
+        menu_icon="distribute-vertical",
         default_index=default_index,
     )
 
     st.sidebar.title("About")
     st.sidebar.info(
-        """test """
+        """ Github Repo: https://github.com/akshatpunia26/satma_stapp """
     )
 
 for app in apps:

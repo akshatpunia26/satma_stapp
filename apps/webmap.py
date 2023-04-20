@@ -2,18 +2,20 @@ import ast
 import streamlit as st
 import leafmap.foliumap as leafmap
 
-@st.cache
-def get_layers(url):
-    options = leafmap.get_wms_layers(url)
-    return options
+def app():
+    @st.cache
+    def get_layers(url):
+        options = leafmap.get_wms_layers(url)
+        return options
 
-def app();
     st.title("Web Map Service (WMS)")
     st.markdown(
         """
     This app is a demonstration of loading Web Map Service (WMS) layers. Simply enter the URL of the WMS service 
     in the text box below and press Enter to retrieve the layers. Go to https://apps.nationalmap.gov/services to find 
     some WMS URLs if needed.
+
+    adding functionality for popular pre-selected WMS Maps soon.
     """
     )
 
